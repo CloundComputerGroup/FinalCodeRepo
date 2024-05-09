@@ -1,0 +1,267 @@
+﻿@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+
+<html id="htmlRoot" ng-app="bankApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/templatebootstrap")
+    <script src="~/Scripts/bankScript/ctrl-user.js"></script>
+    @Styles.Render("~/Content/templatecss")
+
+
+    <link href="~/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/js/locales/bootstrap-datetimepicker.fr.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap-datetimepicker.js"></script>
+    <style>
+        .modal-body {
+            position: relative;
+            /* overflow-y: auto; */
+            max-height: 455px;
+            padding: 15px;
+        }
+        .modal-dialog {
+          height: 100%; /* = 90% of the .modal-backdrop block = %90 of the screen */
+        }
+        .modal-content {
+          height: 100%; /* = 100% of the .modal-dialog block */
+        }
+        .form-horizontal .controls {
+            margin-left: 30px;
+        }
+        form-horizontal .control-label {
+            float: left;
+            padding-top: 5px;
+            text-align: right;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.form_datetime').datetimepicker({
+                //language:  'fr',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                forceParse: 0,
+                showMeridian: 1
+            });
+            $('.form_date').datetimepicker({
+                language: 'uk',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 2,
+                forceParse: 0
+            });
+            $('.form_time').datetimepicker({
+                language: 'uk',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 1,
+                minView: 0,
+                maxView: 1,
+                forceParse: 0
+            });
+        });
+    </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href='~/css/fullcalendar.min.css' rel='stylesheet' />
+    <link href='~/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/css/simple-sidebar.css" rel="stylesheet">
+    <link href="~/Content/select2.min.css" rel="stylesheet" />
+
+
+
+
+
+</head>
+<body ng-controller="userCtrl" id="userCtrl">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <i class="icon-reorder shaded"></i>
+                </a>
+
+                <a class="brand" href="index.html">
+                    Bank Of England
+                </a>
+
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+
+                    <ul class="nav pull-right">
+
+                        <li>
+                            <a ng-click="loadSignUp()" href="">
+                                Sign Up
+                            </a>
+                        </li>
+
+
+
+                        <li>
+                            <a ng-click="forgotPassword()" href="#">
+                                Forgot your password?
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div>
+        </div><!-- /navbar-inner -->
+    </div><!-- /navbar -->
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="module module-login span4 offset4">
+                    <form class="form-vertical" ng-submit="loginUser()" name="loginForm" novalidate>
+                        <div class="module-head">
+                            <h3>Sign In</h3>
+                        </div>
+                        <div class="module-body">
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="text" required ng-model="Email" name="Email" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input class="span12" type="password" required ng-model="Password" name="Password" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ng-if="Error" class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Error!</strong> Something wrong ?
+                        </div>
+                        <div ng-if="Success" class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Congratulations!</strong> Successfully SignUp :)
+                        </div>
+                        <div ng-if="validationErrors" class="alert">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Warning!</strong> Input Required Fields.
+                        </div>
+                        <div class="module-foot">
+                            <div class="control-group">
+                                <div class="controls clearfix">
+                                    <button ng-disabled="loginForm.$dirty && loginForm.$invalid" class="btn btn-primary pull-right">Login</button>
+                                    <label class="checkbox">
+                                        <input type="checkbox"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="qrAuthenticationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Authentication</h4>
+                    </div>
+
+                    <form name="qrAuthenticationForm" class="form-horizontal row">
+                        <div class="modal-body">
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <label style="width:178px;padding-right:10px" class="control-label" for="basicinput">Enter One-time Password code</label>
+                                        <input style="width:120px;margin-right:10px" class="span8" type="text" ng-model="OneTimePassword" name="OneTimePassword" placeholder="One Time Password">
+                                        <button ng-click="VerifyOneTimePassword()" class="btn btn-primary pull-right">Submit</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            @*<div class="control-group">
+                                <div class="controls row">
+                                    <button ng-click="VerifyOneTimePassword()" class="btn btn-primary pull-right">Submit</button>
+                                </div>
+                            </div>*@
+
+
+
+
+                            <div class="control-group">
+                                <div class="controls row">
+                                    <label style="width:512px" class="control-label" for="basicinput">OR (if authenticator app not mapped please activate using QR Code and then enter OTP)</label>
+                                </div>
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <button ng-click="activateTwoFactorAuthentication()" class="btn btn-primary pull-right">Activate authenticator App</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div ng-if="activateAuthentication" class="control-group">
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <p><img ng-src="{{QrcodeImange}}" name="QrcodeImange" ng-model="QrcodeImange"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><!--/.wrapper-->
+
+    <div class="footer">
+        <div class="container">
+
+
+            <b class="copyright">&copy; 2024 Software Engineering Project </b> All rights reserved.
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @Scripts.Render("~/bundles/results")
+</body>
+</html>

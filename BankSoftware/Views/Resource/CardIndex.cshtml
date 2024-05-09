@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+<script src="~/Scripts/bankScript/ctrl-resources.js"></script>
+<div ng-controller="resourcesCtrl" id="resourcesCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Manage Debit/Credit Card</h3>
+        </div>
+        <div class="module-option clearfix">
+
+            <button type="button" class="btn btn-large btn-primary pull-left" data-toggle="modal" ng-click="opendebitcreditModal()">
+                Request New Debit/Credit Card
+            </button>
+            @*<button type="button" class="btn btn-large btn-primary pull-right" data-toggle="modal" ng-click="opendebitcreditHoldModal()">
+                Block Card
+            </button>*@
+
+        </div>
+
+        <div class="module-body">
+            <div ui-grid="debitcreditGrid" ui-grid-selection class="angular-grid-5results"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal Request Credit/Debit Card -->
+    <div class="modal fade" id="requestdebitcreditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Request New chequebook</h4>
+                </div>
+                <form ng-submit="requestdebitcredit()" name="requestdebitcreditForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Number</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedCardUserAccount" name="SelectedCardUserAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Select Card</label>
+                            <div class="controls">
+                                <select placeholder="Card" required ng-model="SelectedResourceType" name="SelectedResourceType" class="span8" ng-options="resource.ResourceName for resource in resourceTypeList track by resource.AccountResourceTypePk">
+                                    <option value="">Select Card</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Security PIN</label>
+                            <div class="controls">
+                                <input type="number" ng-model="CardPIN" name="CardPIN" placeholder="1122" class="span8">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button class="btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Request Credit/Debit Card -->
+    <div class="modal fade" id="cardPINChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Change PIN</h4>
+                </div>
+                <form ng-submit="requestChangeCardPIN()" name="requestChangeCardPINForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">OLD PIN</label>
+                            <div class="controls">
+                                <input type="number" ng-model="CardOldPIN" name="CardOldPIN" placeholder="1122" class="span8">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Security PIN</label>
+                            <div class="controls">
+                                <input type="number" ng-model="CardNewPIN" name="CardNewPIN" placeholder="1122" class="span8">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button class="btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Hold Chequebook -->
+    <div class="modal fade" id="holdDebitCreditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Hold Existing chequebook</h4>
+                </div>
+                <form ng-submit="blockCard()" name="holdCardForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Number</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedHoldCardUserAccount" name="SelectedHoldCardUserAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Select Card</label>
+                            <div class="controls">
+                                <select ng-disabled="true" placeholder="Type" required ng-model="SelectedHoldLeavesNumber" name="SelectedHoldLeavesNumber" class="span8" ng-options="book.Name for book in chequebookLeavesList track by book.Id">
+                                    <option value="">Select Leaves</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Hold/Block (Once a chequebook blocked it cannot be reactivate)</label>
+                            <div class="controls">
+                                <input ng-model="IsActive" name="IsActive" type="checkbox" class="inbox-checkbox">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button class="btn-primary">Hold/Block </button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal HTML -->
+    <div id="blockCardModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <h4 class="modal-title">Block Card Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to block this card?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    <button ng-click="blockResource()" type="button" class="btn btn-danger">Block</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+

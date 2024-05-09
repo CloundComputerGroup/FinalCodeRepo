@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+<script src="~/Scripts/bankScript/ctrl-payments.js"></script>
+<style>
+    .form-horizontal .controls1 {
+        margin-left: 50px;
+    }
+    .formControl {
+        width: 191px;
+        margin-right: 20px;
+    }
+</style>
+<div ng-controller="paymentCtrl" id="paymentCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Accounts</h3>
+        </div>
+        <div class="module-option clearfix">
+            <form ng-submit="paymentRequest()" name="recurringPaymentForm" novalidate class="form-horizontal row-fluid">
+                <div class="modal-body">
+
+
+                    <div class="control-group">
+                        <div class="controls1">
+                            <div class="input-append">
+                                <label style="margin-right:10px">Payment Title</label>
+                                <input ng-model="Title" name="Title" type="text" placeholder="Payment Title" class="formControl span8">
+                            </div>
+                            <div class="input-append">
+                                <label style="margin-right:10px">Payment Amount</label>
+                                <input ng-model="PaymentAmount" name="PaymentAmount" type="number" placeholder="Amount" class="formControl span8">
+                            </div>
+                            <div class="input-append">
+                                <label style="margin-right:10px">Number Of Payment</label>
+                                <input ng-model="NumberOfPayment" name="NumberOfPayment" type="number" placeholder="0.000" class="formControl span8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls1">
+                            <div class="input-append">
+                                <label style="margin-right:10px">Payment Start Date</label>
+                                <input ng-model="StartDate" name="StartDate" class="formControl span12" type="date" placeholder="Recurring Payment Start Date">
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="basicinput">Customer Account</label>
+                        <div class="controls">
+                            <select placeholder="Customer Account" required ng-model="SelectedCustomerAccount" name="SelectedCustomerAccount" class="span8" ng-options="account.AccountName for account in beneficiaryAccountList track by account.AccountPk">
+                                <option value="">Select Customer Account</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="basicinput">Recievable Account</label>
+                        <div class="controls">
+                            <select placeholder="Account" required ng-model="SelectedReceivableAccount" name="SelectedCustomerAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                <option value="">Select Recievable Account</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="basicinput">Frequency</label>
+                        <div class="controls">
+                            <select placeholder="Type" required ng-model="SelectedFrequency" name="SelectedFrequency" class="formControl span8" ng-options="frequency.Name for frequency in frequencyList track by frequency.FrequencyPk">
+                                <option value="">Select Frequency</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button class="btn-primary">Submit Recurring Payment</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="module-body">
+            <div ui-grid="recurringPaymentGrid" ui-grid-selection class="angular-grid-5results"></div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Make a Deposit</h4>
+                </div>
+               
+
+
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+</div>
+
+
+

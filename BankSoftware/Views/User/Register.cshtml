@@ -1,0 +1,203 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html id="htmlRoot" ng-app="bankApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/templatebootstrap")
+    <script src="~/Scripts/bankScript/ctrl-user.js"></script>
+    @Styles.Render("~/Content/templatecss")
+
+
+   
+    <script type="text/javascript" src="~/js/bootstrap-datetimepicker.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.form_datetime').datetimepicker({
+                //language:  'fr',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                forceParse: 0,
+                showMeridian: 1
+            });
+            $('.form_date').datetimepicker({
+                language: 'uk',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 2,
+                forceParse: 0
+            });
+            $('.form_time').datetimepicker({
+                language: 'uk',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 1,
+                minView: 0,
+                maxView: 1,
+                forceParse: 0
+            });
+        });
+    </script>
+   
+
+
+
+
+
+</head>
+<body ng-controller="userCtrl" id="userCtrl">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <i class="icon-reorder shaded"></i>
+                </a>
+
+                <a class="brand" href="index.html">
+                    Bank Of England
+                </a>
+
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+
+                    <ul class="nav pull-right">
+
+                        <li>
+                            <a ng-click="loadSignIn()" href="#">
+                                Sign In
+                            </a>
+                        </li>
+
+
+
+                        <li>
+                            <a href="#">
+                                Forgot your password?
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div>
+        </div><!-- /navbar-inner -->
+    </div><!-- /navbar -->
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="module module-login span4 offset4">
+                    <form class="form-vertical" ng-submit="saveUser()" name="registerForm" novalidate>
+                        <div ng-if="Error" class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Error!</strong> Something wrong ?
+                        </div>
+                        <div ng-if="Success" class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Congratulations!</strong> Successfully SignUp :)
+                        </div>
+                        <div  ng-if="validationErrors" class="alert">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Warning!</strong> Input Required Fields.
+                        </div>
+                        <div class="module-head">
+                            <h3>Sign Up</h3>
+                        </div>
+                        <div class="module-body">
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input required ng-model="Name" name="Name" class="span12" type="text" placeholder="Username *">
+                                    @*<span style="color:red" ng-show="registerForm.Name.$dirty && registerForm.Name.$invalid">
+                                        <span ng-show="registerForm.Name.$error.required">Username is required</span>
+                                    </span>*@
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input required ng-model="Email" name="Email" class="span12" type="text" placeholder="Email *">
+                                    @*<span style="color:red" ng-show="registerForm.Email.$dirty && registerForm.Email.$invalid">
+                                        <span ng-show="registerForm.Email.$error.required">Email is required</span>
+                                    </span>*@
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input required ng-model="Password" name="Password" class="span12" type="password" placeholder="Password *">
+                                    @*<span style="color:red" ng-show="registerForm.Password.$dirty && registerForm.Password.$invalid">
+                                        <span ng-show="registerForm.Password.$error.required">Password is required</span>
+                                    </span>*@
+                                </div>
+                            </div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <select style="width:340px" placeholder="Gender" required ng-model="SelectedGender" name="SelectedGender" class="span3" ng-options="gender.Name for gender in genderList track by gender.Id">
+                                        <option value="">Select Gender</option>
+                                    </select>
+                                    @*<span style="color:red" ng-show="registerForm.SelectedGender.$dirty && registerForm.SelectedGender.$invalid">
+                                        <span ng-show="registerForm.SelectedGender.$error.required">Gender is required</span>
+                                    </span>*@
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input ng-model="MobileNo" name="MobileNo" class="span12" type="text" placeholder="Mobile Number">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input ng-model="DOB" name="DOB" class="span12" type="date" placeholder="Date of Birth">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls row-fluid">
+                                    <input ng-model="NIC" name="NIC" class="span12" type="text" id="inputNIC" placeholder="NIC">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module-foot">
+                            <div class="control-group">
+                                <div class="controls clearfix">
+                                    <button ng-disabled="registerForm.$dirty && registerForm.$invalid" class="btn btn-primary pull-right">Register</button>
+                                    @*<label class="checkbox">
+                        <input type="checkbox"> Remember me
+                    </label>*@
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!--/.wrapper-->
+
+    <div class="footer">
+        <div class="container">
+
+
+            <b class="copyright">&copy; 2024 Software Engineering Project </b> All rights reserved.
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/results")
+</body>
+</html>

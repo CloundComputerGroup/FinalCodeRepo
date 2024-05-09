@@ -1,0 +1,180 @@
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftware.dll.config
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftware.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftware.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\csc.exe
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\csc.exe.config
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\csc.rsp
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\csi.exe
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\csi.rsp
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\System.AppContext.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\vbc.exe
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\vbc.exe.config
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\vbc.rsp
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\VBCSCompiler.exe
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Antlr3.Runtime.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareDataAccess.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareManager.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareModels.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\EntityFramework.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\EntityFramework.SqlServer.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Newtonsoft.Json.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Net.Http.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Helpers.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Mvc.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Optimization.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Razor.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.WebPages.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.WebPages.Razor.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\TwoFactorAuth.Net.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Abstractions.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Configuration.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Container.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Mvc.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\WebActivatorEx.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\WebGrease.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareDataAccess.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareDataAccess.dll.config
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareManager.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\BankSoftwareModels.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\EntityFramework.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\EntityFramework.SqlServer.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Helpers.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Mvc.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Optimization.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.Razor.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.WebPages.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\System.Web.WebPages.Razor.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Newtonsoft.Json.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\TwoFactorAuth.Net.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Abstractions.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Configuration.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Container.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Mvc.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Unity.Mvc.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Antlr3.Runtime.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\obj\Debug\BankSoftware.csprojAssemblyReference.cache
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\obj\Debug\BankSoftware.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\obj\Debug\BankSoftware.csproj.CopyComplete
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\obj\Debug\BankSoftware.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftware\obj\Debug\BankSoftware.pdb
+D:\BankSoftware\BankSoftware\bin\BankSoftware.dll.config
+D:\BankSoftware\BankSoftware\bin\BankSoftware.dll
+D:\BankSoftware\BankSoftware\bin\BankSoftware.pdb
+D:\BankSoftware\BankSoftware\bin\roslyn\csc.exe
+D:\BankSoftware\BankSoftware\bin\roslyn\csc.exe.config
+D:\BankSoftware\BankSoftware\bin\roslyn\csc.rsp
+D:\BankSoftware\BankSoftware\bin\roslyn\csi.exe
+D:\BankSoftware\BankSoftware\bin\roslyn\csi.rsp
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\BankSoftware\BankSoftware\bin\roslyn\System.AppContext.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\System.Collections.Immutable.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\System.IO.FileSystem.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\System.Reflection.Metadata.dll
+D:\BankSoftware\BankSoftware\bin\roslyn\vbc.exe
+D:\BankSoftware\BankSoftware\bin\roslyn\vbc.exe.config
+D:\BankSoftware\BankSoftware\bin\roslyn\vbc.rsp
+D:\BankSoftware\BankSoftware\bin\roslyn\VBCSCompiler.exe
+D:\BankSoftware\BankSoftware\bin\roslyn\VBCSCompiler.exe.config
+D:\BankSoftware\BankSoftware\bin\Antlr3.Runtime.dll
+D:\BankSoftware\BankSoftware\bin\BankSoftwareDataAccess.dll
+D:\BankSoftware\BankSoftware\bin\BankSoftwareManager.dll
+D:\BankSoftware\BankSoftware\bin\BankSoftwareModels.dll
+D:\BankSoftware\BankSoftware\bin\EntityFramework.dll
+D:\BankSoftware\BankSoftware\bin\EntityFramework.SqlServer.dll
+D:\BankSoftware\BankSoftware\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\BankSoftware\BankSoftware\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\BankSoftware\BankSoftware\bin\Microsoft.Practices.ObjectBuilder.dll
+D:\BankSoftware\BankSoftware\bin\Microsoft.Web.Infrastructure.dll
+D:\BankSoftware\BankSoftware\bin\Newtonsoft.Json.dll
+D:\BankSoftware\BankSoftware\bin\System.Net.Http.dll
+D:\BankSoftware\BankSoftware\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\BankSoftware\BankSoftware\bin\System.Security.Cryptography.Algorithms.dll
+D:\BankSoftware\BankSoftware\bin\System.Security.Cryptography.Encoding.dll
+D:\BankSoftware\BankSoftware\bin\System.Security.Cryptography.Primitives.dll
+D:\BankSoftware\BankSoftware\bin\System.Security.Cryptography.X509Certificates.dll
+D:\BankSoftware\BankSoftware\bin\System.Threading.Tasks.Extensions.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.Helpers.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.Mvc.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.Optimization.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.Razor.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.WebPages.Deployment.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.WebPages.dll
+D:\BankSoftware\BankSoftware\bin\System.Web.WebPages.Razor.dll
+D:\BankSoftware\BankSoftware\bin\TwoFactorAuth.Net.dll
+D:\BankSoftware\BankSoftware\bin\Unity.Abstractions.dll
+D:\BankSoftware\BankSoftware\bin\Unity.Configuration.dll
+D:\BankSoftware\BankSoftware\bin\Unity.Container.dll
+D:\BankSoftware\BankSoftware\bin\Unity.Mvc.dll
+D:\BankSoftware\BankSoftware\bin\WebActivatorEx.dll
+D:\BankSoftware\BankSoftware\bin\WebGrease.dll
+D:\BankSoftware\BankSoftware\bin\BankSoftwareDataAccess.pdb
+D:\BankSoftware\BankSoftware\bin\BankSoftwareDataAccess.dll.config
+D:\BankSoftware\BankSoftware\bin\BankSoftwareManager.pdb
+D:\BankSoftware\BankSoftware\bin\BankSoftwareModels.pdb
+D:\BankSoftware\BankSoftware\bin\EntityFramework.xml
+D:\BankSoftware\BankSoftware\bin\EntityFramework.SqlServer.xml
+D:\BankSoftware\BankSoftware\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\BankSoftware\BankSoftware\bin\System.Threading.Tasks.Extensions.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.Helpers.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.Mvc.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.Optimization.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.Razor.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.WebPages.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.WebPages.Deployment.xml
+D:\BankSoftware\BankSoftware\bin\System.Web.WebPages.Razor.xml
+D:\BankSoftware\BankSoftware\bin\Newtonsoft.Json.xml
+D:\BankSoftware\BankSoftware\bin\TwoFactorAuth.Net.xml
+D:\BankSoftware\BankSoftware\bin\Unity.Abstractions.pdb
+D:\BankSoftware\BankSoftware\bin\Unity.Configuration.pdb
+D:\BankSoftware\BankSoftware\bin\Unity.Container.pdb
+D:\BankSoftware\BankSoftware\bin\Unity.Mvc.pdb
+D:\BankSoftware\BankSoftware\bin\Unity.Mvc.xml
+D:\BankSoftware\BankSoftware\bin\Antlr3.Runtime.pdb
+D:\BankSoftware\BankSoftware\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\BankSoftware\BankSoftware\obj\Debug\BankSoftware.csprojAssemblyReference.cache
+D:\BankSoftware\BankSoftware\obj\Debug\BankSoftware.csproj.CoreCompileInputs.cache
+D:\BankSoftware\BankSoftware\obj\Debug\BankSoftware.csproj.CopyComplete
+D:\BankSoftware\BankSoftware\obj\Debug\BankSoftware.dll
+D:\BankSoftware\BankSoftware\obj\Debug\BankSoftware.pdb

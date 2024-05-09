@@ -1,0 +1,28 @@
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareManager.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareManager.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareDataAccess.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareModels.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\EntityFramework.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareDataAccess.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareDataAccess.dll.config
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareModels.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\bin\Debug\EntityFramework.xml
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.csprojAssemblyReference.cache
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.csproj.CopyComplete
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.pdb
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareManager.dll
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareManager.pdb
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareDataAccess.dll
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareModels.dll
+D:\BankSoftware\BankSoftwareManager\bin\Debug\EntityFramework.dll
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareDataAccess.pdb
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareDataAccess.dll.config
+D:\BankSoftware\BankSoftwareManager\bin\Debug\BankSoftwareModels.pdb
+D:\BankSoftware\BankSoftwareManager\bin\Debug\EntityFramework.xml
+D:\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.csprojAssemblyReference.cache
+D:\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.csproj.CoreCompileInputs.cache
+D:\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.csproj.CopyComplete
+D:\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.dll
+D:\BankSoftware\BankSoftwareManager\obj\Debug\BankSoftwareManager.pdb

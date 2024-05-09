@@ -1,0 +1,12 @@
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareModels\bin\Debug\BankSoftwareModels.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareModels\bin\Debug\BankSoftwareModels.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.dll
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.pdb
+C:\Users\Muhammad Arslan\source\repos\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.csprojAssemblyReference.cache
+D:\BankSoftware\BankSoftwareModels\bin\Debug\BankSoftwareModels.dll
+D:\BankSoftware\BankSoftwareModels\bin\Debug\BankSoftwareModels.pdb
+D:\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.csprojAssemblyReference.cache
+D:\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.csproj.CoreCompileInputs.cache
+D:\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.dll
+D:\BankSoftware\BankSoftwareModels\obj\Debug\BankSoftwareModels.pdb

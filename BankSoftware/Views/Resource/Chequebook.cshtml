@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+<script src="~/Scripts/bankScript/ctrl-resources.js"></script>
+<div ng-controller="resourcesCtrl" id="resourcesCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Manage Chequebook</h3>
+        </div>
+        <div class="module-option clearfix">
+
+            <button type="button" class="btn btn-large btn-primary pull-left" data-toggle="modal" ng-click="openChequeBookModal()">
+                Request New Chequebook
+            </button>
+            @*<button type="button" class="btn btn-large btn-primary pull-right" data-toggle="modal" data-target="#holdChequeBookModal">
+                    Block Chequebook
+                </button>*@
+
+        </div>
+
+        <div class="module-body">
+            <div ui-grid="chequebookGrid" ui-grid-selection class="angular-grid-5results"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal Request Chequebook -->
+    <div class="modal fade" id="requestChequeBookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Request New chequebook</h4>
+                </div>
+                <form ng-submit="requestChequeBook()" name="requestChequeBookForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Number</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedUserAccount" name="SelectedUserAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Select Leaves</label>
+                            <div class="controls">
+                                <select placeholder="Type" required ng-model="SelectedLeavesNumber" name="SelectedLeavesNumber" class="span8" ng-options="book.Name for book in chequebookLeavesList track by book.Id">
+                                    <option value="">Select Leaves</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button class="btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="blockChequeBookModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <h4 class="modal-title">Block ChequeBook Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to block this ChequeBook?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    <button ng-click="blockCBResource()" type="button" class="btn btn-danger">Block</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+<script src="~/Scripts/bankScript/ctrl-transaction.js"></script>
+<div ng-controller="transactionCtrl" id="transactionCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Make Transaction</h3>
+        </div>
+        <div class="module-option clearfix">
+
+            <button type="button" class="btn btn-small btn-primary pull-left" data-toggle="modal" data-target="#accountAddEditModal">
+                Add New Account
+            </button>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Select an option to perform a transaction</label>
+                <div class="controls">
+                    <select  placeholder="Type" ng-change="makeTransaction()" required ng-model="SelectedTransactionType" name="SelectedTransactionType" class="span8" ng-options="type.Name for type in transactionTypeList track by type.TransactionTypePk">
+                        <option value="">Select Type</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+       
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="accountAddEditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <form ng-submit="accountRequest()" name="addAccountForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Type</label>
+                            <div class="controls">
+                                <select ng-disabled="IsDisabled" placeholder="Type" required ng-model="SelectedAccountType" name="SelectedAccountType" class="span8" ng-options="type.Name for type in accountTypeList track by type.AccountTypePk">
+                                    <option value="">Select Type</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Opening Balance</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-disabled="IsDisabled" ng-model="Balance" name="Balance" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Security PIN</label>
+                            <div class="controls">
+                                <input ng-disabled="IsDisabled" type="number" ng-model="SecurityPIN" name="SecurityPIN" placeholder="1234" class="span8">
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" class="btn-primary">Submit Request</button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="deleteAccountModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <h4 class="modal-title">Are you sure?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to delete this Account?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    <button ng-click="deleteAccount()" type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Deposit -->
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Make a Deposit</h4>
+                </div>
+                <form ng-submit="depostiTransaction()" name="addAccountForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Enter Amount</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input  ng-model="Amount" name="Amount" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Deposit Into</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedAccount" name="SelectedAccount" class="span8" ng-options="account.Name for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Type</option>
+                                </select>
+                            </div>
+                        </div>
+
+                       
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" class="btn-primary">Deposit</button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+
+    <script src="~/Scripts/bankScript/ctrl-admin.js"></script>
+<div ng-controller="adminCtrl" id="adminCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Account Type</h3>
+        </div>
+        <div class="module-body">
+
+            @*<div class="alert">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Warning!</strong> Something fishy here!
+            </div>
+            <div class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Oh snap!</strong> Whats wrong with you?
+            </div>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Well done!</strong> Now you are listening me :)
+            </div>*@
+
+            <br />
+
+            <form ng-submit="saveAccountType()" name="accountTypeForm" novalidate class="form-horizontal row-fluid">
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Name</label>
+                    <div class="controls">
+                        <input ng-model="Name" type="text" name="Name" placeholder="Type something here..." class="span8">
+                        <span class="help-inline">Minimum 5 Characters</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="basicinput">Description</label>
+                    <div class="controls">
+                        <textarea ng-model="Description" name="Description" class="span8" rows="5"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button ng-disabled="registerForm.$dirty && registerForm.$invalid"  class="btn-primary">Submit Form</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</div><!--/.content-->

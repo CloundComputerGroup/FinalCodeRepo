@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+    <script src="~/Scripts/bankScript/ctrl-account.js"></script>
+
+    <div ng-controller="accountCtrl" id="accountCtrl" class="content">
+        @Html.Hidden("AccountId", (Guid)ViewBag.AccountId)
+    
+        <div class="module">
+            <div class="module-head">
+                <h3>Account Detail</h3>
+            </div>
+            <div class="module-body">
+
+                <form ng-submit="accountRequest()" name="addAccountForm" novalidate class="form-horizontal row-fluid">
+                    <div class="control-group">
+                        <label class="control-label" for="basicinput">Account Type</label>
+                        <div class="controls">
+                            <select ng-disabled="true" placeholder="Type" required ng-model="SelectedAccountType" name="SelectedAccountType" class="span8" ng-options="type.Name for type in accountTypeList track by type.AccountTypePk">
+                                <option value="">Select Type</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="basicinput">Opening Balance</label>
+                        <div class="controls">
+                            <div class="input-append">
+                                <input ng-disabled="true" ng-model="Balance" name="Balance" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="basicinput">Security PIN</label>
+                        <div class="controls">
+                            <input ng-disabled="true" type="number" ng-model="SecurityPIN" name="SecurityPIN" placeholder="1234" class="span8">
+                        </div>
+                    </div>
+
+                    @*<div class="control-group">
+                        <div class="controls">
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" class="btn-primary">Submit Request</button>
+                        </div>
+                    </div>*@
+
+                <div class="control-group" data-toggle="buttons-radio">
+                    <div class="controls">
+                        <button style="margin-left:6px" ng-click="performAction(AccountPk,2)" type="button" class="btn-warning">Edit</button><button style="margin-left:6px" ng-click="performAction(AccountPk,3)" type="button" class="btn-inverse">Delete</button>
+                   </div>
+                 </div>'
+</form>
+            </div>
+        </div>
+
+
+
+    </div><!--/.content-->

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+
+
+<div ng-controller="adminCtrl" id="adminCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Account Type</h3>
+        </div>
+        <div class="module-body">
+            <div ui-grid="availableAccountTypeGrid" ui-grid-selection class="angular-grid-5results"></div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="scripts/datatables/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.datatable-1').dataTable();
+        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
+        $('.dataTables_paginate > a').wrapInner('<span />');
+        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+    });
+</script>

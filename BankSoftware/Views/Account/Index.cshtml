@@ -1,0 +1,343 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var emptyGuidId = "00000000-0000-0000-0000-000000000000";
+}
+<script src="~/Scripts/bankScript/ctrl-account.js"></script>
+
+<div ng-controller="accountCtrl" id="accountCtrl" class="content">
+
+    <div class="module">
+        <div class="module-head">
+            <h3>Accounts</h3>
+        </div>
+        <div class="module-option clearfix">
+            @*<div class="pull-left">
+                    <a ng-click="openAccountRequest()" href="#" class="btn btn-primary">Account Request</a>
+                </div>*@
+            <button type="button" class="btn btn-large btn-primary pull-left" data-toggle="modal" ng-click="openModalAddEdit()">
+                Add New Account
+            </button>
+            <div class="btn btn-small btn-primary pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-small btn-primary pull-right">
+                        Make Transaction
+                    </button>
+                    <button class="btn btn-small btn-primary pull-right dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="type in transactionTypeList"><a data-dismiss="modal" ng-click="makeTransaction(type.TransactionTypePk,type.Name)" href="#">{{type.Name}}</a></li>
+                        <li class="divider"></li>
+                        
+
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="module-body">
+            <div ui-grid="accountGrid" ui-grid-selection class="angular-grid-5results"></div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="accountAddEditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add/Update Account</h4>
+                </div>
+                <form ng-submit="accountRequest()" name="addAccountForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Name</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-model="AccountName" name="AccountName" type="text" placeholder="Account Name" class="span8">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Type</label>
+                            <div class="controls">
+                                <select ng-disabled="IsDisabled" placeholder="Type" required ng-model="SelectedAccountType" name="SelectedAccountType" class="span8" ng-options="type.Name for type in accountTypeList track by type.AccountTypePk">
+                                    <option value="">Select Type</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Opening Balance</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-disabled="IsDisabled" ng-model="Balance" name="Balance" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Security PIN</label>
+                            <div class="controls">
+                                <input ng-disabled="IsDisabled" type="number" ng-model="SecurityPIN" name="SecurityPIN" placeholder="1234" class="span8">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button  class="btn-primary">Submit Request</button>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button ng-disabled="(addAccountForm.$dirty && addAccountForm.$invalid)" type="button" class="btn btn-primary">Save changes</button>
+                        </div>*@
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="deleteAccountModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <h4 class="modal-title">Are you sure?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to delete this Account?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    <button ng-click="deleteAccount()" type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Modal Deposit*@ 
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Make a Deposit</h4>
+                </div>
+                <form ng-submit="depositTransaction()" name="depositTransactionForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Enter Amount</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-model="Amount" name="Amount" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Deposit Into</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedAccount" name="SelectedAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Type</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button  class="btn-primary">Deposit</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Payment -->
+    <div class="modal fade" id="paymentModal" tabindex="-2" role="dialog" aria-labelledby="paymentModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="paymentModalLabel">Make a Payment</h4>
+                </div>
+                <form ng-submit="paymentTransaction()" name="paymentTransactionForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Account Holder/Beneficiary</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedBeneficiaryAccount" name="SelectedBeneficiaryAccount" class="span8" ng-options="account.AccountName for account in beneficiaryAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">From Account Number</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedAccount" name="SelectedAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Enter Amount</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-model="Amount" name="Amount" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Reference</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-model="Reference" name="Reference" type="text" placeholder="Reference" class="span8">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button  class="btn-primary">Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Transfer -->
+    <div class="modal fade" id="transferModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="paymentModalLabel">Make a Transfer</h4>
+                </div>
+                <form ng-submit="transferTransaction()" name="transferTransactionForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Transfer From</label>
+                            <div class="controls">
+                                <select ng-change="accountChange()" placeholder="Account" required ng-model="SelectedTransferAccount" name="SelectedAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Transfer To</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedTransferBeneficiaryAccount" name="SelectedBeneficiaryAccount" class="span8" ng-options="account.AccountName for account in beneficiaryTransferAccountList track by account.AccountPk">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Transfer Amount</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-model="TransferAmount" name="Amount" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button  class="btn-primary">Transfer</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                   
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Withdraw -->
+    <div class="modal fade" id="withdrawModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Make a Withdraw</h4>
+                </div>
+                <form ng-submit="withdrawTransaction()" name="withdrawTransactionForm" novalidate class="form-horizontal row-fluid">
+                    <div class="modal-body">
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Deposit Into</label>
+                            <div class="controls">
+                                <select placeholder="Account" required ng-model="SelectedWithdrawAccount" name="SelectedWithdrawAccount" class="span8" ng-options="account.AccountName for account in userAccountList track by account.AccountPk">
+                                    <option value="">Select Type</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Enter Amount</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input ng-model="WithdrawAmount" name="Amount" type="number" placeholder="0.000" class="span8"><span class="add-on">$</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button  class="btn-primary">Withdraw</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
